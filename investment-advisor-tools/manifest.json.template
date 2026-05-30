@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.28",
+  "version": "1.0.0",
+  "id": "{{ID}}",
+  "developer": {
+    "name": "implodingduck",
+    "websiteUrl": "https://github.com/implodingduck/cowork-plugin-sample",
+    "privacyUrl": "https://github.com/implodingduck/cowork-plugin-sample",
+    "termsOfUseUrl": "https://github.com/implodingduck/cowork-plugin-sample"
+  },
+  "name": {
+    "short": "investment-advisor-tools",
+    "full": "Investment Advisor Tools for Copilot Cowork"
+  },
+  "description": {
+    "short": "Investment Advisor Tools for Copilot Cowork",
+    "full": "Comprehensive Investment Advisor tools for Copilot Cowork including stock lookup, financial data analysis, and market research capabilities."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#2B579A",
+  "agentSkills": [
+    { "folder": "./skills/stock-lookup" },
+    { "folder": "./skills/powerpoint-template" },
+    { "folder": "./skills/investment-advisor-copilot" }
+  ],
+
+  "agentConnectors": [
+    {
+      "id": "yahoo-finance-api",
+      "displayName": "Yahoo Finance API",
+      "description": "Access to Yahoo Finance data and services",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "{{YAHOO_MCP_SERVER_URL}}",
+          "mcpToolDescription": {
+            "file": "skills/stock-lookup/references/yahoo-finance-tools.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "foundry-mcp",
+      "displayName": "Foundry MCP tool",
+      "description": "Access to Foundry agent",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "{{FOUNDRY_MCP_SERVER_URL}}",
+          "mcpToolDescription": {
+            "file": "skills/investment-advisor-copilot/references/foundry-mcp-tools.json"
+          },
+          "authorization": {
+            "type": "OAuthPluginVault",
+            "referenceId": "{{FOUNDRY_AUTH_REFERENCE_ID}}"
+          }
+        }
+      }
+    }
+  ]
+
+}

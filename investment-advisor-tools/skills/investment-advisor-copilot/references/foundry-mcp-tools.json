@@ -1,0 +1,18 @@
+{
+  "tools": [
+    {
+      "name": "invoke_agent",
+      "description": "Invoke a Microsoft Foundry Agent with the given message and return its response.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "The user message to send to the Foundry Agent"
+          }
+        },
+        "required": ["message"]
+      }
+    }
+  ]
+}

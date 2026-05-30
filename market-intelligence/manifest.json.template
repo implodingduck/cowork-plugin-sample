@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.28",
+  "version": "1.0.0",
+  "id": "{{ID}}",
+  "developer": {
+    "name": "implodingduck",
+    "websiteUrl": "https://github.com/implodingduck/cowork-plugin-sample",
+    "privacyUrl": "https://github.com/implodingduck/cowork-plugin-sample",
+    "termsOfUseUrl": "https://github.com/implodingduck/cowork-plugin-sample"
+  },
+  "name": {
+    "short": "market-intelligence",
+    "full": "Market Intelligence for Copilot Cowork"
+  },
+  "description": {
+    "short": "Market Intelligence for Copilot Cowork",
+    "full": "Comprehensive market intelligence tools for Copilot Cowork to provide insights on market trends, economic data, or geopolitical insights."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#2B579A",
+  "agentSkills": [
+    { "folder": "./skills/market-intelligence" }
+  ]
+}
